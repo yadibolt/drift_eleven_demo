@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import type { IUserStore } from "../../@interfaces/store/userStore.interface";
-import useUserStore from "../../@hooks/store/userStore.hook";
+import useUserStore from "../../@hooks/store/use-userStore.hook";
 
 interface IUserStoreContext {
   store: IUserStore;

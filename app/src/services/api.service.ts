@@ -11,7 +11,9 @@ export const apiAuthInterceptor = (config: InternalAxiosRequestConfig) => {
   return config;
 };
 
-export const apiAuthResetInterceptor = (config: InternalAxiosRequestConfig) => {
+export const apiAuthRefreshInterceptor = (
+  config: InternalAxiosRequestConfig,
+) => {
   const token = authService.getRefreshToken();
 
   if (token) {
@@ -22,17 +24,17 @@ export const apiAuthResetInterceptor = (config: InternalAxiosRequestConfig) => {
 };
 
 export const apiService = axios.create({
-  baseURL: "https://drifteleven.local/api",
+  baseURL: "https://cms.drifteleven.local/api",
 });
 
 export const apiAuthService = axios.create({
-  baseURL: "https://drifteleven.local/auth",
+  baseURL: "https://cms.drifteleven.local/auth",
 });
 
-export const apiAuthResetService = axios.create({
-  baseURL: "https://drifteleven.local/auth",
+export const apiAuthRefreshService = axios.create({
+  baseURL: "https://cms.drifteleven.local/auth",
 });
 
 apiService.interceptors.request.use(apiAuthInterceptor);
 apiAuthService.interceptors.request.use(apiAuthInterceptor);
-apiAuthResetService.interceptors.request.use(apiAuthResetInterceptor);
+apiAuthRefreshService.interceptors.request.use(apiAuthRefreshInterceptor);

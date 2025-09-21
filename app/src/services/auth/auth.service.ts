@@ -1,4 +1,4 @@
-import useUserStore from "../../@hooks/store/userStore.hook";
+import useUserStore from "../../@hooks/store/use-userStore.hook";
 import type { TUser } from "../../@types/user/user.type";
 import { jwt } from "../../util/jwt.util";
 
@@ -36,6 +36,18 @@ export const authService = {
       default:
         this.removeUser();
     }
+  },
+  getState() {
+    const userStore = useUserStore.getState();
+    return {
+      user: userStore.getUser(),
+      accessToken: userStore.getAccessToken(),
+      refreshToken: userStore.getRefreshToken(),
+      loggedIn:
+        userStore.getUser() !== null &&
+        userStore.getAccessToken() !== null &&
+        userStore.getRefreshToken() !== null,
+    };
   },
   getUser() {
     const userStore = useUserStore.getState();

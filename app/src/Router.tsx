@@ -18,4 +18,8 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/404",
+    element: <div>404 Not Found</div>,
+  },
 ]);

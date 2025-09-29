@@ -1,14 +1,15 @@
-import { useEnsureToken } from "../../@hooks/token/use-token.hook";
+import { Navigate } from "react-router-dom";
+import { useAuthentication } from "../../@hooks/token/use-token.hook";
 
 export default function AuthGuard({ children }: { children: React.ReactNode }) {
-  const { isLoading, error } = useEnsureToken();
+  const { isLoading, error } = useAuthentication();
 
   if (isLoading) {
-    return <div>Initializing app...</div>;
+    return <></>;
   }
 
   if (error) {
-    return <div>Error initializing app: {error.message}</div>;
+    return <Navigate to="/404" replace />;
   }
 
   return <>{children}</>;

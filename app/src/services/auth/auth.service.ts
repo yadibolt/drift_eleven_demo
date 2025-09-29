@@ -10,8 +10,12 @@ export const authService = {
     }
     this.setState("loggedIn", accessToken, refreshToken);
   },
-  logout() {
+  logout(accessToken: string | null = null) {
+    const userStore = useUserStore.getState();
+
     this.setState("loggedOut");
+
+    if (accessToken) userStore.setAccessToken(accessToken);
   },
   setState(
     stateType: "loggedIn" | "loggedOut",

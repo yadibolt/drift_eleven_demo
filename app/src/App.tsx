@@ -11,8 +11,6 @@ function App() {
   const userStore = useUserStore();
   const userStoreMemo = useMemo(() => ({ store: userStore }), [userStore]);
 
-  console.log("App is rendering");
-
   return (
     <UserStoreContext.Provider value={userStoreMemo}>
       <QueryClientProvider client={queryClient}>

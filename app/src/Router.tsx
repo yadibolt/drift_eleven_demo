@@ -3,8 +3,7 @@ import PrerenderLayout from "./components/layout/PrerenderLayout";
 import PageLayout from "./components/layout/PageLayout";
 import { bundleLoader } from "./query/layout/bundle.loader";
 import { queryClient } from "./query/query.client";
-
-console.log("Router.tsx is being imported!!!");
+import Login from "./components/temporary/Login";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +14,10 @@ export const router = createBrowserRouter([
         index: true,
         element: <PageLayout />,
         loader: bundleLoader(queryClient),
+      },
+      {
+        path: "login",
+        element: <Login />,
       },
     ],
   },

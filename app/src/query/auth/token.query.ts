@@ -9,7 +9,7 @@ export const getTokenQuery = () => ({
 
 export const REFRESH_TOKEN_QUERY_KEY = "refreshToken";
 
-export const getResetTokenQuery = () => ({
+export const getRefreshTokenQuery = () => ({
   queryKey: [REFRESH_TOKEN_QUERY_KEY],
   queryFn: () => tokenRepository.getRefresh(),
 });

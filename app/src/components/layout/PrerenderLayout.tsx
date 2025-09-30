@@ -12,9 +12,6 @@ export default function PrerenderLayout() {
     return <div>Error loading token</div>;
   }
 
-  return (
-    <div className="prerender-layout">
-      <Outlet />
-    </div>
+  return (<Outlet />
   );
 }

@@ -3,7 +3,7 @@ import PrerenderLayout from "./components/layout/PrerenderLayout";
 import PageLayout from "./components/layout/PageLayout";
 import { bundleLoader } from "./query/layout/bundle.loader";
 import { queryClient } from "./query/query.client";
-import Login from "./components/temporary/Login";
+import Homepage from "./page/Homepage";
 
 export const router = createBrowserRouter([
   {
@@ -11,13 +11,15 @@ export const router = createBrowserRouter([
     element: <PrerenderLayout />,
     children: [
       {
-        index: true,
+        path: "/",
         element: <PageLayout />,
         loader: bundleLoader(queryClient),
-      },
-      {
-        path: "login",
-        element: <Login />,
+        children: [
+          {
+            index: true,
+            element: <Homepage />,
+          },
+        ],
       },
     ],
   },

@@ -7,6 +7,8 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./query/query.client";
 import AuthGuard from "./components/auth/AuthGuard";
 
+import './styles/main.css';
+
 function App() {
   const userStore = useUserStore();
   const userStoreMemo = useMemo(() => ({ store: userStore }), [userStore]);

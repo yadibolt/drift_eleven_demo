@@ -24,15 +24,15 @@ export const apiAuthRefreshInterceptor = (
 };
 
 export const apiService = axios.create({
-  baseURL: "https://cms.drifteleven.local/api",
+  baseURL: "https://cms.blackcoffee.local/api",
 });
 
 export const apiAuthService = axios.create({
-  baseURL: "https://cms.drifteleven.local/auth",
+  baseURL: "https://cms.blackcoffee.local/auth",
 });
 
 export const apiAuthRefreshService = axios.create({
-  baseURL: "https://cms.drifteleven.local/auth",
+  baseURL: "https://cms.blackcoffee.local/auth",
 });
 
 apiService.interceptors.request.use(apiAuthInterceptor);

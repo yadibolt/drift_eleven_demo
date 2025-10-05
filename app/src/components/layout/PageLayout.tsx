@@ -10,7 +10,7 @@ export default function PageLayout() {
     <div className="bg-gray-950 px-8 py-12 text-white">
       <Header bundle={bundleData} />
       <Outlet />
-      <Footer bundle={bundleData}/>
+      <Footer/>
     </div>
   );
 }

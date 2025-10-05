@@ -1,6 +1,4 @@
-import type { IBundleJsonResponse } from "../../@interfaces/layout/bundle.interface";
-
-export default function Footer({ bundle }: { bundle: IBundleJsonResponse }) {
+export default function Footer() {
   return (
     <div>Footer</div>
   )

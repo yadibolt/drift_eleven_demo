@@ -26,7 +26,7 @@ export default function Hero() {
         <span className="text-sm font-bold uppercase tracking-widest text-white">{data?.data.fields.field_slug as string}</span>
         <h1 className="text-9xl uppercase font-bold mb-5 text-white">{data?.data.fields.field_title as string}</h1>
         <p className="text-base font-normal mb-10 text-white">{data?.data.fields.field_description as string}</p>
-        <button className="text-white rounded-2xl bg-amber-950 p-5">{data?.data.fields.field_cta_button_text as string}</button>
+        <button className="text-white rounded-2xl bg-gray-950 px-16 py-5">{data?.data.fields.field_cta_button_text as string}</button>
       </div>
     </div>
   )

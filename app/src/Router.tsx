@@ -31,7 +31,7 @@ export const router = createBrowserRouter([
           {
             path: "/*",
             loader: contentLoader(queryClient),
-            element: <Content />
+            element: <Content />,
           }
         ],
       },
